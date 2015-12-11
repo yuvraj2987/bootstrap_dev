@@ -9,8 +9,9 @@ not_installed()
   return $st
 }
 
-
+# Execution started
 echo "Bootstap any new instance"
+SDIR="$( cd "$(dirname "$0")"; pwd -P)"
 if not_installed python; then 
 	echo "Python is not installed."
 	exit -1
@@ -26,3 +27,4 @@ if not_installed ansible; then
 	exit -1
 fi
 
+echo "source dir: ${SDIR}"
