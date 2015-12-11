@@ -1,0 +1,53 @@
+" start pathogen vim plugin manager
+call pathogen#helptags()
+call pathogen#infect()
+
+
+" change mapleader from \ to ,
+" mapleader is used to place custom keys
+let mapleader=","
+
+" Quickly edit/reload vimrc file
+" maps ,ev - edit vimrc
+" maps ,sv - reload vimrc
+nmap <silent> <leader>ev :e $MYVIMRC<CR>
+nmap <silent> <leader>sv :so $MYVIMRC<CR>
+
+" General vim settings for all files
+"
+" Do not write any backup file 
+set noswapfile
+set nobackup
+
+set hidden 		" hides buffers instead of closing them. You have to save file/buffer separately. 
+set backspace=indent,eol,start
+set autoindent 		" set autoindenting
+set number
+set showmatch
+set ignorecase		" ignore cases when searching
+set smartcase		" ignore cases if search pattern is all in lower case,
+					" case sensitive otherwise
+set smarttab
+set hlsearch		" higlight search terms
+set incsearch		" show search matches as you type.
+set shiftround  	" use multiple shiftwidths when indenting with '<' and '>'.
+set history=1000	" remember more commands
+set undolevels=20	
+set title
+" paste mode. Pasting from external source press F2 key to avoid weired
+" formatting
+set pastetoggle=<F2>
+
+" enable syntax and indentation
+syntax on
+filetype indent plugin on
+
+
+" tabs size for all files. We have file specific specs in $VIMRC/ftplugins dir
+set tabstop=4		"a tab is 4 spaces
+set shiftwidth=4	"number of spaces to use in autoindenting 
+
+" run powerline scripts
+python from powerline.vim import setup as powerline_setup
+python powerline_setup()
+python del powerline_setup
