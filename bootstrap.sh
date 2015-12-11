@@ -1,14 +1,28 @@
 #!/usr/bin/env bash
 
 ###### Common methods
-is_installed()  
+not_installed()  
 {
   pkg="$1"
   `which "$PKG"`
   st=$?
-  if [ $st -eq 0 ]; then return 1; else return 0; fi
+  return $st
 }
 
 
 echo "Bootstap any new instance"
-if is_installed python; then echo "Python is installed."; else echo "Python is not installed."; fi
+if not_installed python; then 
+	echo "Python is not installed."
+	exit -1
+fi
+
+if not_installed git; then
+	echo "Git not installed"
+	exit -1
+fi
+
+if not_installed ansible; then
+	echo "Ansible not installed."
+	exit -1
+fi
+
