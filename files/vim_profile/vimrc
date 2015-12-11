@@ -46,8 +46,3 @@ filetype indent plugin on
 " tabs size for all files. We have file specific specs in $VIMRC/ftplugins dir
 set tabstop=4		"a tab is 4 spaces
 set shiftwidth=4	"number of spaces to use in autoindenting 
-
-" run powerline scripts
-python from powerline.vim import setup as powerline_setup
-python powerline_setup()
-python del powerline_setup
