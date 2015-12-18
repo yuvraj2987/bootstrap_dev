@@ -7,3 +7,4 @@
 
 ## GCE networking, Network, Load Balancer
 Under GCE project Networking section you will find Network Load Balancing rules.
+We add forwarding rules here. 
