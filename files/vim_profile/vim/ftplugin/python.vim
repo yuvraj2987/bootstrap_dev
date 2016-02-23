@@ -8,5 +8,6 @@ setlocal expandtab
 " highlight whitespaces
 setlocal list
 setlocal listchars=tab:>.,trail:.,extends:#,nbsp:.
-
+" call flake8
+autocmd BufWritePost *.py call Flake8()
 
